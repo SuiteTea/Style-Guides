@@ -8,15 +8,25 @@ The following style guides have been adapted from various industry leaders. When
 - [JavaScript (Google)](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml)
 - [PHP (PHP Framework Interop Group)](http://www.php-fig.org/psr/2)
 
+
 ## 1. General
 
 ### Indenting
 
-Code MUST use 4 spaces for indenting, not tabs.
+Code **must** use 4 spaces for indenting, not tabs.
+
+### Files
+
+Lines **must** use the Unix LF (linefeed) line ending.
+
+#### File Names
+
+- MyScripts, CSS, JavaScript, and PHP view files should be lowercase and use hyphens to separate words: `some-awesome-file.js`
+- PHP Class file names should match their class names: `TheClassName.php`
 
 ### Lines
 
-Lines should stick to a maximum length of 80 characters; lines exceeding this maximum should be split into multiple subsequent lines of the same maximum length.
+Lines should stick to a maximum length of 80 characters; lines exceeding this maximum should be split into multiple subsequent lines of the same maximum length. **(HTML is exempt from this rule)**
 
 No trailing whitespace at the end of non-blank lines.
 
@@ -26,11 +36,37 @@ Blank lines may be added to improve readability and to indicate related blocks o
 - Constants use `ALL_CAPS`
 - Variables use `snake_case`
 - Functions use `camalCase`
-- Classes use `StudlyCaps`
+- PHP Classes and JavaScript Object Classes use `StudlyCaps`
 - Private variables and functions are prefixed with an underscore
 
+### Documentation
+
+Documents should include descriptive comments in the form of DocBlocks. DocBlock syntax is similar across languages, but may vary from language to language.
+
+PHP files should use [phpDocumentor](http://www.phpdoc.org/) for syntax reference and documentation generation.
+
+JavaScript files should use [YUIDoc](http://yui.github.io/yuidoc/) for syntax reference and documentation generation.
+
+### Alignment & Spacing
+
+Arrays and Objects with more than **one** item must break each item onto a new line indented once
+
+	$person = array(
+		'first_name' => 'John',
+		'last_name' => 'Doe'
+	);
+
 ### Strings
+
 Single-quotes (') are preferred to double-quotes (").
+
+String concatenation **must** have a space before and after each concatenating operator.
+
+	// PHP
+	$new_string = 'Johnny ran ' . $distance . ' miles on ' . $day . ' morning.';
+	
+	// Javascript
+	var new_string = 'Johnny ran ' + distance + ' miles on ' + day + ' morning.';
 
 ### Control Structures
 `if`/`else`/`for`/`while`/`try` always have braces and always go on multiple lines.
@@ -166,7 +202,7 @@ Avoid qualifying ID and class names with type selectors.
 - Use only lowercase `color: #e5e5e5;`
 - Separate words in ID and class names by a hyphen
 - Declarations must be in alphabetical order
-- Use a semicolon after the end of every declaration
+- Use a semicolon after the end of every declaration *except* the last declaration in a block
 - Insert a space immediately after the colon following the property name `color: #000;`
 - Use single quotation marks instead of double quotation marks
 - Use shorthand properties where possible `padding: 0 10px 0 20px;`
@@ -217,14 +253,26 @@ Private variables and functions look like the following
 
 ### Files
 
-All PHP files must end with a single blank line.
-
 Files should follow the proper MVC pattern of separating application logic and display logic. Exceptions ***may*** be made in cases of MyScripts.
+
+Files containing only PHP must end with a single blank line.
 
 The closing `?>` tag must be omitted from files containing only PHP
 
 ### PHP Tags
+
 PHP code must use the long `<?php ?>` tags or the short-echo `<?= ?>` tags; it must not use the other tag variations.
+
+### Strings
+
+Manually concatenate strings and variables. 
+
+	// not recommended
+	$some_var = "Good morning $name.";
+	
+	// recommended
+	$some_var = 'Good morning ' . $name . '.';
+	
 
 ### Keywords and True/False/Null
 
