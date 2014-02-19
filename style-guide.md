@@ -228,6 +228,8 @@ Variables declared in succession should be separated by commas and ending with a
 	var some_variable,
 		another_variable,
 		yet_another_variable = 'Something';
+		
+*"Private"* variables and methods ***may*** be prefixed with a single underscore. (Javascript ONLY)
 
 ### Arrays and Objects
 Objects and Arrays are declared with shorthand syntax
@@ -240,16 +242,7 @@ Objects and Arrays are declared with shorthand syntax
 ## 5. PHP
 
 ### Naming
-Follow the general naming guidelines above
-
-Private variables and functions look like the following
-  
-	private $_some_variable
-	
-	private _someFunction()
-	{
-	
-	}
+Property names ***should not*** be prefixed with a single underscore to indicate protected or private visibility. This is in keeping with PSR-2 guidelines.
 
 ### Files
 
