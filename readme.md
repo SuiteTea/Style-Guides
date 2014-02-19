@@ -1,71 +1,39 @@
-# Style Guide - v0.2 
+# Style Guide - v1.0
 
-### Last updated: 05/31/2013 at 4:15pm
-
-
-## New in version 0.2
-
-### Files
-
-Lines **must** use the Unix LF (linefeed) line ending.
-
-#### File Names
-
-- MyScripts, CSS, JavaScript, and PHP view files should be lowercase and use hyphens to separate words: `some-awesome-file.js`
-- PHP Class file names should match their class names: `TheClassName.php`
-
-### Documentation
-
-Documents should include descriptive comments in the form of DocBlocks. DocBlock syntax is similar across languages, but may vary from language to language.
-
-PHP files should use [phpDocumentor](http://www.phpdoc.org/) for syntax reference and documentation generation.
-
-JavaScript files should use [YUIDoc](http://yui.github.io/yuidoc/) for syntax reference and documentation generation.
-
-### Alignment & Spacing
-
-Arrays and Objects with more than **one** item must break each item onto a new line indented once
-
-	$person = array(
-		'first_name' => 'John',
-		'last_name' => 'Doe'
-	);
+### Last updated: 02/19/2014 at 11:15am
 
 
-
-
-## Updated in version 0.2
+## Updated in version 1.0
 
 ### Naming
 
-- PHP Classes and JavaScript Object Classes use `StudlyCaps`
+- Private javascript variables and methods ***may*** be prefixed with a single underscore to indicate visibility.
+- Private PHP variables and methods ***must not*** be prefixed with an underscore to indicate visibility.
+- Global/helper functions use `snake_case`.
 
-### Strings
+## CSS
 
-String concatenation **must** have a space before and after each concatenating operator.
+### Formatting
 
-	// PHP
-	$new_string = 'Johnny ran ' . $distance . ' miles on ' . $day . ' morning.';
-	
-	// Javascript
-	var new_string = 'Johnny ran ' + distance + ' miles on ' + day + ' morning.';
-	
-### CSS Formatting Rules
+Declarations ***should*** be in alphabetical order.
 
-- Use a semicolon after the end of every declaration *except* the last declaration in a block 
 
 ## PHP
 
-### Files
-
-Files containing only PHP must end with a single blank line.
-
 ### Strings
 
-Manually concatenate strings and variables. 
+Strings and variables ***should*** be manually concatenated. 
 
 	// not recommended
 	$some_var = "Good morning $name.";
 	
 	// recommended
 	$some_var = 'Good morning ' . $name . '.';
+	
+### Classes
+
+Class brackets immediately follow a single space after the class declaration on the same line
+
+	class SomeClass {
+	
+	}

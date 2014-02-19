@@ -1,11 +1,11 @@
-# Mediasation Style Guides
+# SuiteTea Style Guides
 
-The purpose of this guide is to create uniformity among Mediasation code.
+The purpose of this guide is to create uniformity among SuiteTea code.
 
 The following style guides have been adapted from various industry leaders. When in doubt, refer to their guides.
 
 - [HTML/CSS Style Guide (Google)](http://google-styleguide.googlecode.com/svn/trunk/htmlcssguide.xml)
-- [JavaScript (Google)](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml)
+- [Javascript (Google)](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml)
 - [PHP (PHP Framework Interop Group)](http://www.php-fig.org/psr/2)
 
 
@@ -21,12 +21,12 @@ Lines **must** use the Unix LF (linefeed) line ending.
 
 #### File Names
 
-- MyScripts, CSS, JavaScript, and PHP view files should be lowercase and use hyphens to separate words: `some-awesome-file.js`
+- CSS, Javascript, and PHP view files should be lowercase and use hyphens to separate words: `some-awesome-file.js`
 - PHP Class file names should match their class names: `TheClassName.php`
 
 ### Lines
 
-Lines should stick to a maximum length of 80 characters; lines exceeding this maximum should be split into multiple subsequent lines of the same maximum length. **(HTML is exempt from this rule)**
+Lines ***should*** stick to a maximum length of 80 characters; lines exceeding this maximum should be split into multiple subsequent lines of the same maximum length. **(HTML is exempt from this rule)**
 
 No trailing whitespace at the end of non-blank lines.
 
@@ -35,9 +35,9 @@ Blank lines may be added to improve readability and to indicate related blocks o
 ### Naming
 - Constants use `ALL_CAPS`
 - Variables use `snake_case`
-- Functions use `camalCase`
-- PHP Classes and JavaScript Object Classes use `StudlyCaps`
-- Private variables and functions are prefixed with an underscore
+- Global/helper functions use `snake_case`
+- PHP Class and Javascript Object methods use `camalCase`
+- PHP Classes and Javascript Object Classes use `StudlyCaps`
 
 ### Documentation
 
@@ -45,7 +45,7 @@ Documents should include descriptive comments in the form of DocBlocks. DocBlock
 
 PHP files should use [phpDocumentor](http://www.phpdoc.org/) for syntax reference and documentation generation.
 
-JavaScript files should use [YUIDoc](http://yui.github.io/yuidoc/) for syntax reference and documentation generation.
+Javascript files should use [YUIDoc](http://yui.github.io/yuidoc/) for syntax reference and documentation generation.
 
 ### Alignment & Spacing
 
@@ -124,7 +124,7 @@ Use only lowercase
 	
 ### Type Attributes
 
-Omit type attributes for style sheets and scripts. Only use type attributes for style sheets and scripts when **not** using CSS or JavaScript.
+Omit type attributes for style sheets and scripts. Only use type attributes for style sheets and scripts when **not** using CSS or Javascript.
 
 Specifying type attributes in these contexts is not necessary as HTML5 implies text/css and text/javascript as defaults. This can be safely done even for older browsers.
 	
@@ -201,7 +201,7 @@ Avoid qualifying ID and class names with type selectors.
 
 - Use only lowercase `color: #e5e5e5;`
 - Separate words in ID and class names by a hyphen
-- Declarations must be in alphabetical order
+- Declarations ***should*** be in alphabetical order
 - Use a semicolon after the end of every declaration *except* the last declaration in a block
 - Insert a space immediately after the colon following the property name `color: #000;`
 - Use single quotation marks instead of double quotation marks
@@ -213,7 +213,7 @@ Avoid qualifying ID and class names with type selectors.
 
 
 
-## 4. JavaScript
+## 4. Javascript
 
 ### General
 
@@ -246,7 +246,7 @@ Property names ***should not*** be prefixed with a single underscore to indicate
 
 ### Files
 
-Files should follow the proper MVC pattern of separating application logic and display logic. Exceptions ***may*** be made in cases of MyScripts.
+Files should follow the proper MVC pattern of separating application logic and display logic.
 
 Files containing only PHP must end with a single blank line.
 
@@ -254,11 +254,11 @@ The closing `?>` tag must be omitted from files containing only PHP
 
 ### PHP Tags
 
-PHP code must use the long `<?php ?>` tags or the short-echo `<?= ?>` tags; it must not use the other tag variations.
+PHP code must use the long `<?php ?>` tags; it must not use the other tag variations.
 
 ### Strings
 
-Manually concatenate strings and variables. 
+Strings and variables ***should*** be manually concatenated. 
 
 	// not recommended
 	$some_var = "Good morning $name.";
@@ -282,9 +282,8 @@ keywords look like single words.
 
 Each class must be in a file by itself.
 
-Class brackets go on a new line aligned with the `class` declaration
+Class brackets immediately follow a single space after the class declaration on the same line
 
-	class SomeClass
-	{
+	class SomeClass {
 	
 	}
